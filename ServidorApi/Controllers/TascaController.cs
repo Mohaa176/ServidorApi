@@ -41,7 +41,7 @@ namespace ServidorApi.Controllers
         public void Put(int id, [FromBody] Tasca tasca, string estat)
         {
             TascaService objTascaService = new TascaService();
-            objTascaService.Update(tasca, estat);
+            objTascaService.Update(tasca);
         }
 
         // DELETE users/5

@@ -94,7 +94,7 @@ namespace ServidorApi.Service
         }
 
 
-        public int Update(Tasca tascaa, string estat)
+        public int Update(Tasca tascaa)
         {
             int rows_afected = 0;
             using (var ctx = DbContext.GetInstance())
@@ -107,7 +107,7 @@ namespace ServidorApi.Service
                     command.Parameters.Add(new SQLiteParameter("descripcio", tascaa.Descripcio));
                     command.Parameters.Add(new SQLiteParameter("data", tascaa.Data));
                     command.Parameters.Add(new SQLiteParameter("data1", tascaa.Data1));
-                    command.Parameters.Add(new SQLiteParameter("estat", estat));
+                    command.Parameters.Add(new SQLiteParameter("estat", tascaa.Estat));
                     command.Parameters.Add(new SQLiteParameter("Id", tascaa.ID));
 
                     rows_afected = command.ExecuteNonQuery();
